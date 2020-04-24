@@ -1,0 +1,8 @@
+extends main
+block unique-content
+    p Выберите группу:
+        form(method = 'POST' action= '/')
+            select(name = 'selectGroup')
+                each group in groupList
+                    option(value=group.id) #{group.name}
+            input(type = 'submit' value = 'Показать студентов')

@@ -1,0 +1,20 @@
+extends main
+block unique-content
+    form(method='POST' action='/orderChoice')
+        select(name='sortChoice')
+            option(value='name') Сортировать по алфавиту
+            option(value='birth') Сортировать по дате рождения
+        input(type = 'submit' value = 'Сортировать')
+
+    table
+        thead
+            tr
+                th Имя студента
+                th Дата рождения(Г/М/Д)
+        tbody
+            each student in studentsList
+                tr
+                    td #{student.name}
+                    td #{student.birth}
+    form(method='POST' action='/toHomePage')
+        input(type='submit' value='Вернуться на главную страницу')
